@@ -1,0 +1,22 @@
+{
+  "name": "book_record_management_1",
+  "version": "1.0.0",
+  "description": "book record management",
+  "main": "index.js",
+  "scripts": {
+    "start": "index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/PBKawale/Book_Record_Management_1.git)"
+  },
+  "author": "pranav",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
