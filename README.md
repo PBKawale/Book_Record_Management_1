@@ -51,16 +51,49 @@ missed by renawal and subscription date >> 150/-
 # Routes and Endpoints
 
 ## /users (here we will get all the users)
-POST: Create a new user
-GET: Get all the user info here
+POST: Creating a new user
+GET: Get all the users
 
 ## /users/{id}
-GET: Get a user by id 
+GET: Get user by id 
 PUT: Update a user by their ID  (every year you must update the id)
+>> Concept used inside update method
+...each  ==> find this fields
+     ## "name": "Jane",
+     ## "surname": "Doe",
+      "email": "user@email.com",
+      "issuedBook": "3",
+      "issuedDate": "01/07/2021",
+      "returnDate": "01/10/2021",
+      "subscriptionType": "Basic",
+      "subscriptionDate": "01/01/2022"
+
+...data ==> 
+{
+  "data":{
+   ## "name":"pranav",
+   ## "surname":"kawale"
+  }
+}
+
+# explaination
+>> now here we will split the "each" and then the "data" section here the fields which are 
+>> specidfied inside "data" sections will be overwritten inside "each" section 
+>> i.e the name and surname will updated and else part will be same
+>> this is how the spread oper works, it will get the latest/recent values
+>> we can't write "data" first instead "each" bcz we want to update the recent value which is present inside "each" section 
+
 DELETE: Delete a user by id (check if he/she still have issued book) && (check if he/she still have any fine pending) 
 (after leaving the library you must delete the user id and also check the above conditions)
 
 Note --> If u want to Update slite info you can go with put
+
+>> Concept used inside update method
+
+const index = users.indexOf(user);
+users.splice(index, 1);
+
+
 
 ## /users/subscription-details/{id}
 GET: Get user subscription details
@@ -69,16 +102,16 @@ GET: Get user subscription details
        >> Is there any fine
 
 ## /books
-GET: Get all the books
-POST: Update/Create/Add new books
+*GET: Get all the books
+*POST: Create/Add new books
 
 ## /books/{id}
-GET: Get a book by id
-PUT: Update a book by their ID
+*GET: Get a book by id
+*PUT: Update a book by their ID
 DELETE: 
 
 ## /books/issued  (books which are not present/available in the library)
-GET: Get all issued books
+*GET: Get all issued books
 
 ## /books/issued/withFine
 GET: Get all issued books with their fine
@@ -88,3 +121,5 @@ GET: Get all issued books with their fine
 ## npm i nodemon --save-dev (developers dependancy)
 ## npm i express
 ## npm run dev
+
+
